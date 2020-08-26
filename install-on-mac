@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -e
+
+# Get Resources
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+brew update
+
+# MUST HAVE
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install visual-studio-code
+brew cask install intellij-idea-ce
+brew cask install figma
+brew cask install slack
+brew cask install flycut
+brew cask install alfred
+brew cask install 1password6
+brew cask install dropbox
+brew cask install notion
+brew cask install pgadmin4
+brew cask install libreoffice
+
+brew install tree
+brew install autojump
+brew install tig
+brew install wget
+brew cask install postgres
+brew install postgresql
+
+
+# app dev sdk/tools
+brew install node
+brew install zsh-completions
+
+# Install yarn
+brew install yarn
+
+
+
+# Setup Postgres
+createuser -sPE postgres
+createdb $whoami
