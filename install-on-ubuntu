@@ -24,18 +24,11 @@ sudo snap install code --classic
 # Install communications
 sudo snap install slack --classic
 
-# app dev sdk/tools
-sudo apt update
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-source ~/.bashrc
-echo "NVM version: "
-nvm --version
-echo "\n\nInstalling Node v14.2.0: "
-nvm install v14.2.0
-echo "Node Version: "
-node -v
-echo "\n\n"
+# NodeJS
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install nodejs
 
+# app dev sdk/tools
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk version
