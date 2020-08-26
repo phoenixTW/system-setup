@@ -33,7 +33,6 @@ curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk version
 sdk install java 11.0.8-amzn
-sdk use java 8.0.262-amzn
 echo "\n\n"
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
