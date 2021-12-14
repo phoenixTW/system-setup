@@ -8,36 +8,67 @@ set -e
 brew update
 
 # MUST HAVE
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install visual-studio-code
-brew cask install intellij-idea-ce
-brew cask install figma
-brew cask install slack
-brew cask install flycut
-brew cask install alfred
-brew cask install 1password6
-brew cask install dropbox
-brew cask install notion
-brew cask install pgadmin4
-brew cask install libreoffice
+brew install google-chrome
+brew install iterm2
+brew install visual-studio-code
+brew install intellij-idea-ce
+brew install figma
+brew install slack
+brew install flycut
+brew install alfred
+brew install 1password
+brew install dropbox
+brew install notion
+brew install pgadmin4
+brew install libreoffice
+brew cask install docker
+brew cask install insomnia
 
+# Developer tool
 brew install tree
 brew install autojump
 brew install tig
 brew install wget
-brew cask install postgres
-brew install postgresql
 
 
-# app dev sdk/tools
-brew install node
+# Setup ZSH
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew install zsh-completions
 
-# Install yarn
-brew install yarn
+# Setup ASDF tools
+brew install asdf
 
+# Install Java
+asdf plugin-add java-corretto https://github.com/beardix/asdf-java-corretto.git
+asdf install java corretto-11.0.13.8.1
 
+# Install Graal VM
+asdf install java graalvm-21.3.0+java11
+
+# Install Nodejs
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git 
+asdf install nodejs 16.11.1
+
+# Install Yarn
+asdf plugin-add yarn
+asdf install yarn latest
+
+# Install aws-vault
+asdf plugin-add aws-vault https://github.com/karancode/asdf-aws-vault.git
+asdf install aws-vault latest
+
+# Install aws-cli
+asdf plugin-add awscli https://github.com/MetricMike/asdf-awscli.git
+asdf install awscli latest
+
+# Install act
+asdf plugin-add act https://github.com/grimoh/asdf-act.git
+asdf install act latest
+
+# Install Postgres
+asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
+asdf install postgres 10.14
 
 # Setup Postgres
 createuser -sPE postgres
